@@ -3,17 +3,19 @@ type: plugin
 author: david-pivonka
 name: bigquery
 label:
-  en_US: bigquery
-  ja_JP: bigquery
-  zh_Hans: bigquery
-  pt_BR: bigquery
+  en_US: BigQuery
+  ja_JP: BigQuery
+  zh_Hans: BigQuery
+  pt_BR: BigQuery
 description:
-  en_US: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
-  ja_JP: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
-  zh_Hans: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
-  pt_BR: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
+  en_US: "Query and manipulate BigQuery data with dual tools: read-only SELECT queries and write operations (INSERT/UPDATE/DELETE)."
+  ja_JP: "2つのツールでBigQueryデータをクエリおよび操作：読み取り専用SELECTクエリと書き込み操作（INSERT/UPDATE/DELETE）。"
+  zh_Hans: "使用双工具查询和操作BigQuery数据：只读SELECT查询和写入操作（INSERT/UPDATE/DELETE）。"
+  pt_BR: "Consulte e manipule dados do BigQuery com ferramentas duplas: consultas SELECT somente leitura e operações de gravação (INSERT/UPDATE/DELETE)."
 icon: icon.svg
 icon_dark: icon-dark.svg
+tags:
+  - utilities
 resource:
   memory: 268435456
   permission: {}

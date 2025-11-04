@@ -2,61 +2,61 @@ identity:
   author: "david-pivonka"
   name: "bigquery"
   label:
-    en_US: "bigquery"
-    zh_Hans: "bigquery"
-    pt_BR: "bigquery"
-    ja_JP: "bigquery"
+    en_US: "BigQuery"
+    zh_Hans: "BigQuery"
+    pt_BR: "BigQuery"
+    ja_JP: "BigQuery"
   description:
-    en_US: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
-    zh_Hans: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
-    pt_BR: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
-    ja_JP: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+    en_US: "Query and manipulate BigQuery data with dual tools: read-only SELECT queries and write operations (INSERT/UPDATE/DELETE)."
+    zh_Hans: "使用双工具查询和操作BigQuery数据：只读SELECT查询和写入操作（INSERT/UPDATE/DELETE）。"
+    pt_BR: "Consulte e manipule dados do BigQuery com ferramentas duplas: consultas SELECT somente leitura e operações de gravação (INSERT/UPDATE/DELETE)."
+    ja_JP: "2つのツールでBigQueryデータをクエリおよび操作：読み取り専用SELECTクエリと書き込み操作（INSERT/UPDATE/DELETE）。"
   icon: "icon.svg"
-
-#########################################################################################
-# If you want to support OAuth, you can uncomment the following code.
-#########################################################################################
-# oauth_schema:
-#   client_schema:
-#     - name: "client_id"
-#       type: "secret-input"
-#       required: true
-#       url: https://example.com/oauth/authorize
-#       placeholder:
-#         en_US: "Please input your Client ID"
-#         zh_Hans: "请输入你的 Client ID"
-#         pt_BR: "Insira seu Client ID"
-#       help:
-#         en_US: "Client ID is used to authenticate requests to the example.com API."
-#         zh_Hans: "Client ID 用于认证请求到 example.com API。"
-#         pt_BR: "Client ID é usado para autenticar solicitações à API do example.com."
-#       label:
-#         zh_Hans: "Client ID"
-#         en_US: "Client ID"
-#     - name: "client_secret"
-#       type: "secret-input"
-#       required: true
-#       url: https://example.com/oauth/authorize
-#       placeholder:
-#         en_US: "Please input your Client Secret"
-#         zh_Hans: "请输入你的 Client Secret"
-#         pt_BR: "Insira seu Client Secret"
-#       help:
-#         en_US: "Client Secret is used to authenticate requests to the example.com API."
-#         zh_Hans: "Client Secret 用于认证请求到 example.com API。"
-#         pt_BR: "Client Secret é usado para autenticar solicitações à API do example.com."
-#       label:
-#         zh_Hans: "Client Secret"
-#         en_US: "Client Secret"
-#   credentials_schema:
-#     - name: "access_token"
-#       type: "secret-input"
-#       label:
-#         zh_Hans: "Access Token"
-#         en_US: "Access Token"
+  tags:
+    - utilities
 
 tools:
-  - tools/bigquery.yaml
+  - tools/bigquery_query.yaml
+  - tools/bigquery_mutation.yaml
+
+credentials_for_provider:
+  service_account_json:
+    type: secret-input
+    required: true
+    label:
+      en_US: "Google Cloud Service Account JSON"
+      zh_Hans: "Google Cloud服务账号JSON"
+      pt_BR: "Google Cloud Service Account JSON"
+      ja_JP: "Google Cloudサービスアカウント JSON"
+    placeholder:
+      en_US: "Paste the entire service account JSON here"
+      zh_Hans: "在此粘贴完整的服务账号JSON"
+      pt_BR: "Cole todo o JSON da conta de serviço aqui"
+      ja_JP: "サービスアカウント全体のJSONをここに貼り付けてください"
+    help:
+      en_US: "The service account JSON key file content from Google Cloud Console"
+      zh_Hans: "来自Google Cloud控制台的服务账号JSON密钥文件内容"
+      pt_BR: "O conteúdo do arquivo de chave JSON da conta de serviço do Google Cloud Console"
+      ja_JP: "Google Cloud Consoleからのサービスアカウントキー ファイルの内容"
+  project_id:
+    type: text-input
+    required: false
+    label:
+      en_US: "Project ID (optional override)"
+      zh_Hans: "项目ID（可选覆盖）"
+      pt_BR: "Project ID (optional override)"
+      ja_JP: "プロジェクトID（オプションのオーバーライド）"
+    placeholder:
+      en_US: "Leave empty to use project_id from service account JSON"
+      zh_Hans: "留空以使用服务账号JSON中的project_id"
+      pt_BR: "Deixe vazio para usar project_id do JSON da conta de serviço"
+      ja_JP: "サービスアカウントJSONのproject_idを使用する場合は空のままにします"
+    help:
+      en_US: "Override the project_id specified in the service account JSON"
+      zh_Hans: "覆盖服务账号JSON中指定的project_id"
+      pt_BR: "Substitua o project_id especificado no JSON da conta de serviço"
+      ja_JP: "サービスアカウントJSONで指定されたproject_idを上書きします"
+
 extra:
   python:
     source: provider/bigquery.py

@@ -1,1 +1,4 @@
 dify_plugin>=0.4.0,<0.7.0
+google-cloud-bigquery>=3.0.0
+sqlglotrs>=0.4.0
+sqlglot>=26.11.1

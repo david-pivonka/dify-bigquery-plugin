@@ -1,0 +1,44 @@
+identity:
+  name: bigquery_mutation
+  author: david-pivonka
+  label:
+    en_US: BigQuery Mutation
+    zh_Hans: BigQuery变更
+    pt_BR: BigQuery Mutation
+    ja_JP: BigQuery変更
+description:
+  human:
+    en_US: Execute INSERT, UPDATE, or DELETE queries against BigQuery
+    zh_Hans: 对BigQuery执行INSERT、UPDATE或DELETE查询
+    pt_BR: Execute INSERT, UPDATE, or DELETE queries against BigQuery
+    ja_JP: BigQueryに対してINSERT、UPDATE、またはDELETEクエリを実行します
+  llm: A Dify plugin tool to execute data modification queries (INSERT, UPDATE, DELETE) against Google BigQuery database.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: SQL Mutation Query
+      zh_Hans: SQL变更查询
+      pt_BR: SQL Mutation Query
+      ja_JP: SQL変更クエリ
+    human_description:
+      en_US: The INSERT, UPDATE, or DELETE query to execute against BigQuery
+      zh_Hans: 要对BigQuery执行的INSERT、UPDATE或DELETE查询
+      pt_BR: The INSERT, UPDATE, or DELETE query to execute against BigQuery
+      ja_JP: BigQueryに対して実行するINSERT、UPDATE、またはDELETEクエリ
+    llm_description: The SQL mutation query (INSERT, UPDATE, or DELETE) to execute against Google BigQuery. Only data modification queries are allowed, SELECT queries are not permitted.
+    form: llm
+output_schema:
+  type: object
+  properties:
+    affected_rows:
+      type: integer
+      description: Number of rows affected by the mutation
+    success:
+      type: boolean
+      description: Whether the mutation was successful
+extra:
+  python:
+    source: tools/bigquery_mutation.py
+

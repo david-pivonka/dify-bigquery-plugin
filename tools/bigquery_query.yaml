@@ -1,0 +1,62 @@
+identity:
+  name: bigquery_query
+  author: david-pivonka
+  label:
+    en_US: BigQuery Query
+    zh_Hans: BigQuery查询
+    pt_BR: BigQuery Query
+    ja_JP: BigQueryクエリ
+description:
+  human:
+    en_US: Execute SELECT queries against BigQuery
+    zh_Hans: 对BigQuery执行SELECT查询
+    pt_BR: Execute SELECT queries against BigQuery
+    ja_JP: BigQueryに対してSELECTクエリを実行します
+  llm: A Dify plugin tool to execute SELECT queries against Google BigQuery database.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: SQL Query
+      zh_Hans: SQL查询
+      pt_BR: SQL Query
+      ja_JP: SQLクエリ
+    human_description:
+      en_US: The SELECT query to execute against BigQuery
+      zh_Hans: 要对BigQuery执行的SELECT查询
+      pt_BR: The SELECT query to execute against BigQuery
+      ja_JP: BigQueryに対して実行するSELECTクエリ
+    llm_description: The SQL SELECT query to execute against Google BigQuery. Only SELECT queries are allowed.
+    form: llm
+  - name: max_fetched_rows
+    type: number
+    required: false
+    default: 100
+    label:
+      en_US: Maximum rows to fetch
+      zh_Hans: 最大获取行数
+      pt_BR: Maximum rows to fetch
+      ja_JP: 最大取得行数
+    human_description:
+      en_US: "Maximum number of rows to return from the query (default: 100)"
+      zh_Hans: "查询返回的最大行数（默认值：100）"
+      pt_BR: "Maximum number of rows to return from the query (default: 100)"
+      ja_JP: "クエリから返される最大行数（デフォルト：100）"
+    llm_description: The maximum number of rows to fetch from BigQuery. Defaults to 100 if not specified.
+    form: form
+output_schema:
+  type: object
+  properties:
+    data:
+      type: array
+      items: 
+        type: object
+    columns:
+      type: array
+      items: 
+        type: string
+extra:
+  python:
+    source: tools/bigquery_query.py
+
