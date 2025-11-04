@@ -1,0 +1,34 @@
+identity:
+  name: "bigquery"
+  author: "david-pivonka"
+  label:
+    en_US: "bigquery"
+    zh_Hans: "bigquery"
+    pt_BR: "bigquery"
+    ja_JP: "bigquery"
+description:
+  human:
+    en_US: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+    zh_Hans: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+    pt_BR: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+    ja_JP: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+  llm: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+      ja_JP: クエリ文字列
+    human_description:
+      en_US: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+      zh_Hans: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+      pt_BR: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+      ja_JP: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+    llm_description: "Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections."
+    form: llm
+extra:
+  python:
+    source: tools/bigquery.py

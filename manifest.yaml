@@ -1,0 +1,36 @@
+version: 0.0.1
+type: plugin
+author: david-pivonka
+name: bigquery
+label:
+  en_US: bigquery
+  ja_JP: bigquery
+  zh_Hans: bigquery
+  pt_BR: bigquery
+description:
+  en_US: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
+  ja_JP: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
+  zh_Hans: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
+  pt_BR: Enables Dify apps to query Google BigQuery directly for data retrieval, analysis, and integration using secure authenticated connections.
+icon: icon.svg
+icon_dark: icon-dark.svg
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/bigquery.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-11-04T09:50:23.018617+01:00
+privacy: PRIVACY.md
+repo: https://github.com/david-pivonka/dify-bigquery-plugin
+verified: false
